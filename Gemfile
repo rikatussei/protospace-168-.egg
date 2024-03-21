@@ -71,6 +71,7 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'pry-rails'
 group :development do
   gem 'rubocop', require: false
 end
