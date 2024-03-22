@@ -6,15 +6,24 @@ class UsersController < ApplicationController
   def new
   end
 
-  def edit
+  def create
   end
   
+  def destroy
+  end
+  
+  def edit
+  end
+
   def update
     if current_user.update(user_params)
       redirect_to root_path
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def show
   end
 
   private
