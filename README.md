@@ -29,7 +29,7 @@
 ### Association
 
 - has_many   :comments
-- belongs to :user
+- belongs_to :user
 
 
 ## comments テーブル
