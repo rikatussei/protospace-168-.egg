@@ -5,14 +5,16 @@
         <%= "プロトタイプのタイトル"%>
       </p>
       <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する←投稿者と一致する記述を追加してください。  && current_user.id == prototype.user_id %>
+         <% if user_signed_in?%>
         <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path(prototype.id), data: { turbo_method: :delete }, class: :prototype__btn %>
+          <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
+          <%= link_to "削除する", @prototype, data: { turbo_method: :delete }, data: { turbo_method: :delete }, class: :prototype__btn %>
         </div>
+        <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag "プロトタイプの画像" %>
+        <%= image_tag "logo.png" %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
