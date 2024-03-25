@@ -24,9 +24,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    @user = user.name
-    @prototype = user.prototypes
+    @user = User.find(params[:id])
+    @prototypes = @user.prototypes
   end
 
   private
