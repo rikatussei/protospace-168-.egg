@@ -6,7 +6,7 @@
       </p>
       <%= link_to "by #{@prototype.user.name}", user_path, class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する←投稿者と一致する記述を追加してください。  && current_user.id == prototype.user_id %>
-         <% if user_signed_in?&& current_user.id == @prototype.user_id%>
+          <% if user_signed_in?&& current_user.id == @prototype.user_id%>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
           <%= link_to "削除する", @prototype, data: { turbo_method: :delete }, data: { turbo_method: :delete }, class: :prototype__btn %>
@@ -16,7 +16,7 @@
       <div class="prototype__image">
       <% if @prototype.image.attached? %>
       <%= image_tag @prototype.image %>
-       <% end %>
+        <% end %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
