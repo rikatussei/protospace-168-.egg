@@ -22,7 +22,7 @@ class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
     @comment = Comment.new
-    @comments = @prototype.comments if @prototype
+    @comments = @prototype.comments
   end
 
   def edit
